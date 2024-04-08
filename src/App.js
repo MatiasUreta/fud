@@ -7,6 +7,8 @@ import { Skills } from "./components/Skills";
 import { Projects } from "./components/Projects";
 import { Contact } from "./components/Contact";
 import { Footer } from "./components/Footer";
+import Servicios from './components/Servicios';
+import Tarifas from './components/Tarifas';
 
 function App() {
   return (
@@ -14,7 +16,9 @@ function App() {
       <NavBar />
       <Banner />
       <Skills />
+      <Servicios />
       <Projects />
+      <Tarifas/>
       <Contact />
       <Footer />
     </div>

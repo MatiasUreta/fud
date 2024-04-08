@@ -57,7 +57,7 @@ export const Banner = () => {
               <div className={isVisible ? "animate__animated animate__fadeIn" : ""}>
                 <span className="tagline">FUD Soluciones Web</span>
                 <h1>{`Hola, somos FUD`} <span className="txt-rotate" dataPeriod="1000" data-rotate='[ "Desarrollo Web", "Diseño Gráfico", "Marketing Digital" ]'><span className="wrap">{text}</span></span></h1>
-                  <p>Bienvenidos a nuestra agencia de Soluciones Web, un equipo joven y dinámico especializado en Desarrollo Web, Marketing Digital y Diseño Gráfico. Nos apasiona la innovación y la creatividad, y nos dedicamos a ayudar a las empresas y emprendedores a alcanzar su máximo potencial en el mundo digital. <br/><br/> Ofrecemos una variedad de servicios para satisfacer todas tus necesidades digitales. Ya sea que necesites una Tienda Online para ofrecer tus productos, o diseñar tu Logo</p>
+                  <p>Bienvenidos a nuestra agencia de Soluciones Web, un equipo joven y dinámico especializado en Desarrollo Web, Marketing Digital y Diseño Gráfico. Nos apasiona la innovación y la creatividad, y nos dedicamos a ayudar a las empresas y emprendedores a alcanzar su máximo potencial en el mundo digital. <br/><br/> Ofrecemos una variedad de servicios para satisfacer todas tus necesidades digitales. Ya sea que necesites una Tienda Online para ofrecer tus productos, diseñar tu Logo o posicionarte en los buscadores.</p>
                   <button onClick={() => console.log('connect')}>Contactar <ArrowRightCircle size={25} /></button>
               </div>}
             </TrackVisibility>
