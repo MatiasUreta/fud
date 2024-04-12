@@ -34,24 +34,24 @@ export const Skills = () => {
             <div className="row">
                 <div className="col-12">
                     <div className="skill-bx wow zoomIn">
-                        <h2>Habilidades</h2>
+                        <h2>Servicios</h2>
                         <p>Nuestro equipo se compene por programdores Full Stack, Diseñadores Gráficos y Community Manager.<br></br> Lo que nos hace ser la MEJOR opción a la hora de impulsar tu marca.</p>
                         <Carousel responsive={responsive} infinite={true} className="owl-carousel owl-theme skill-slider">
                             <div className="item">
                                 <img src={meter1} alt="Image" />
-                                <h5>Desarrollo Web</h5>
+                                <h5>Diseñamos y Creamos Tu Sitio Web</h5>
                             </div>
                             <div className="item">
                                 <img src={meter2} alt="Image" />
-                                <h5>Marketing Digital</h5>
+                                <h5>Diseñamos Tu Logo</h5>
                             </div>
                             <div className="item">
                                 <img src={meter3} alt="Image" />
-                                <h5>Logo Design</h5>
+                                <h5>Posicionamos Tu Marca</h5>
                             </div>
                             <div className="item">
                                 <img src={meter1} alt="Image" />
-                                <h5>Diseño Gráfico</h5>
+                                <h5>Diseñamos Tus Ideas</h5>
                             </div>
                         </Carousel>
                     </div>

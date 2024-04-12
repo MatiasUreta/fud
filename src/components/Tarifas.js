@@ -3,6 +3,8 @@ import { Container, Row, Col, Tab, Nav } from "react-bootstrap";
 import { ProjectCard } from "./ProjectCard";
 import 'animate.css';
 import TrackVisibility from 'react-on-screen';
+import Subscription from './Planes';
+import DiseñoWeb from './DiseñoWeb';
 
 
 
@@ -15,11 +17,11 @@ const Tarifas = () => {
                 <TrackVisibility>
                   {({ isVisible }) =>
                     <div className={isVisible ? "animate__animated animate__fadeIn" : ""}>
-                        <h2>Tarifas Abril 2024</h2>
+                        <h2>Planes Abril 2024</h2>
                       <Tab.Container id="projects-tabs" defaultActiveKey="first">
                         <Nav variant="pills" className="nav-pills mb-5 justify-content-center align-items-center" id="pills-tab">
                           <Nav.Item>
-                            <Nav.Link eventKey="first">Desarrollo Web </Nav.Link>
+                            <Nav.Link eventKey="first">Diseño Web </Nav.Link>
                           </Nav.Item>
                           <Nav.Item>
                             <Nav.Link eventKey="second">Diseño Gráfico</Nav.Link>
@@ -30,7 +32,7 @@ const Tarifas = () => {
                         </Nav>
                         <Tab.Content id="slideInUp" className={isVisible ? "animate__animated animate__slideInUp" : ""}>
                           <Tab.Pane eventKey="first">
-                            <p> Precios Desarrollo Web</p>
+                            <DiseñoWeb/>
                             
                           </Tab.Pane>
                           <Tab.Pane eventKey="second">
