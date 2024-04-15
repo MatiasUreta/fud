@@ -3,7 +3,7 @@ import { Button } from 'react-bootstrap';
 import { BsCheckCircle, BsFileEarmark, BsArrowDownUp, BsImages, BsCreditCard, BsTruck, BsSearch, BsFillEnvelopeFill, BsLink45Deg, BsGraphUp, BsPhoneLandscape, BsCash, BsShieldLock } from "react-icons/bs";
 import colorSharp from "../assets/img/color-sharp.png"
 
-const DetailTiendaOnline = () => {
+const DetailAutogestion = () => {
     return (
         <section className="skill" id="skills" style={{ marginTop: '70px' }}>
     <div className="container">
@@ -28,11 +28,11 @@ const DetailTiendaOnline = () => {
                 </div>
             </div>
             {/* Este div contiene los precios. Ahora tiene alignSelf: 'center', lo que lo alinea en el centro del espacio disponible a la derecha */}
-            <div className="col-md-4" style={{ border: '1px solid rgba(255, 255, 255, 0.5)', padding: '20px', borderRadius: '5px', flex: '1 1 30%', alignSelf: 'center' }}>
-                <h2 style={{ margin: '15px', color: 'pink'}}>Tienda Online</h2>
+            <div className="col-md-4" style={{ border: '1px solid rgba(255, 255, 255, 0.5)', padding: '20px', borderRadius: '5px', flex: '1 1 35%', alignSelf: 'center' }}>
+                <h2 style={{ margin: '15px', color: 'pink'}}>Diseño Web Autogestionable en WordPress</h2>
                 <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '20px' }}>
-                    <h4>Tienda Online $350</h4>
-                    <h4>Abono Mensual $50</h4>
+                    <h4>Web WordPress $350</h4>
+                    <h4>Abono Mensual $20</h4>
                 </div>
                 <hr style={{ borderTop: '1px solid #777' }} />
                 <p style={{ textAlign: 'center', color: '#777', marginBottom: '20px' }}>Contratación de dominio GRATIS por un año</p>
@@ -51,4 +51,4 @@ const DetailTiendaOnline = () => {
     )
 }
 
-export default DetailTiendaOnline;
+export default DetailAutogestion

@@ -1,13 +1,17 @@
 import { useState } from "react";
 import { Container, Row, Col, Tab, Nav } from "react-bootstrap";
-import { ProjectCard } from "./ProjectCard";
-import projImg1 from "../assets/img/tienda.webp";
-import projImg2 from "../assets/img/landing.webp";
-import projImg3 from "../assets/img/empresas.webp";
-import projImg4 from "../assets/img/autogestion.webp";
-import colorSharp2 from "../assets/img/color-sharp2.png";
 import 'animate.css';
 import TrackVisibility from 'react-on-screen';
+import DetailTiendaOnline from "./DetailTiendaOnline";
+import DetailEmprendedores from "./DetailEmprendedores";
+import DetailEmpresas from "./DetailEmpresas";
+import DetailAutogestion from "./DetailAutogestion";
+
+// Import your icons
+import icon1 from "../assets/img/tienda.webp";
+import icon2 from "../assets/img/landing.webp";
+import icon3 from "../assets/img/empresas.webp";
+import icon4 from "../assets/img/autogestion.webp";
 
 export const DiseñoWeb = () => {
 
@@ -15,29 +19,33 @@ export const DiseñoWeb = () => {
         {
             title: "Diseño de Página Web para Tiendas Online",
             description: "¿Querés tener un sitio para vender de forma online, ya sea servicios o productos y aumentar tus ingresos? Esta es tu opción!",
-            imgUrl: projImg1,
+            icon: icon1,
         },
         {
-            title: "Diseño de Página Web Económica",
+            title: "Diseño Web para Emprendedores",
             description: "¿Sos emprendedor o tenés tu negocio y buscás un diseño web económico que te impulse a nivel digital? Podemos ayudarte.",
-            imgUrl: projImg2,
+            icon: icon2,
         },
         {
-            title: "Diseño de Página Web para Empresas",
+            title: "Diseño Web para Empresas",
             description: "¿Estás buscando mejorar la marca de tu empresa y tener un sitio web profesional? Esta es tu opción!",
-            imgUrl: projImg3,
+            icon: icon3,
         },
         {
             title: "Diseño de Página Web Autogestionable en WordPress",
             description: "¿Querés tener tu página web para subir contenidos y realizar cambios de forma rápida, simple y fácil? Esta es tu opción!",
-            imgUrl: projImg4,
+            icon: icon4,
         }
     ];
 
     const [activePlan, setActivePlan] = useState(null);
 
     const handlePlanClick = (plan) => {
-        setActivePlan(plan);
+        if (activePlan === plan) {
+            setActivePlan(null); 
+        } else {
+            setActivePlan(plan);
+        }
     };
 
     return (
@@ -52,16 +60,15 @@ export const DiseñoWeb = () => {
 
                                     <Tab.Container id="projects-tabs" defaultActiveKey="first">
                                         <Tab.Pane eventKey="first">
-                                            <p>Elegí el tipo de página web que mejor se adapte a tu negocio. </p>
-                                            <Row>
+                                            <p>Si puedes imaginarlo, podemos crearlo.</p>
+                                            <Row className="d-flex justify-content-around">
                                                 {
                                                     PlanWeb.map((project, index) => {
                                                         return (
-                                                            <ProjectCard
-                                                                key={index}
-                                                                {...project}
-                                                                onClick={() => handlePlanClick(project)}
-                                                            />
+                                                            <div className="border p-2 m-2" style={{ width: '20%', textAlign: 'center' }} onClick={() => handlePlanClick(project)}>
+                                                                <img src={project.icon} alt={project.title} style={{ width: '100%' }} />
+                                                                <h3>{project.title}</h3>
+                                                            </div>
                                                         )
                                                     })
                                                 }
@@ -69,11 +76,18 @@ export const DiseñoWeb = () => {
                                         </Tab.Pane>
                                     </Tab.Container>
                                 </div>}
+                                
                         </TrackVisibility>
                     </Col>
                 </Row>
             </Container>
-            <img className="background-image-right" src={colorSharp2}></img>
+            {/* Aquí se muestra el componente correspondiente según el plan activo */}
+            {activePlan && (
+                activePlan.title === "Diseño Web para Emprendedores" ? <DetailEmprendedores plan={activePlan} /> :
+                activePlan.title === "Diseño Web para Empresas" ? <DetailEmpresas plan={activePlan} /> :
+                activePlan.title === "Diseño de Página Web Autogestionable en WordPress" ? <DetailAutogestion plan={activePlan} /> :
+                <DetailTiendaOnline plan={activePlan} />
+            )}
         </section>
     )
 }

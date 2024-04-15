@@ -59,11 +59,13 @@ a:hover {
 img {
   width: 100%;
   height: auto;
+  cursor: pointer;
 }
 
 button {
   border: 0;
   background-color: transparent;
+  cursor: pointer;
 }
 
 input:focus, textarea:focus, select:focus {
@@ -602,7 +604,8 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   border: 0;
   padding: 0 15px;
 }
-.new-email-bx button {
+.new-email-bx button,
+.Agregar {
   background: linear-gradient(90.21deg, #AA367C -5.91%, #4A2FBD 111.58%);
   padding: 20px 65px;
   color: #fff;
@@ -644,3 +647,19 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 }
 
 
+.my-list {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+
+
+.itemDetail {
+  margin-top: 15px;
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.nav-link {
+  cursor: pointer;
+}

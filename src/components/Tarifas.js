@@ -5,10 +5,11 @@ import 'animate.css';
 import TrackVisibility from 'react-on-screen';
 import Subscription from './Planes';
 import DiseñoWeb from './DiseñoWeb';
-
-
+import DiseñoGrafico from './DiseñoGrafico'; // Asegúrate de importar el componente DiseñoGrafico
 
 const Tarifas = () => {
+    const [activeTab, setActiveTab] = React.useState('first');
+
     return (
         <section className="project" id="projects">
           <Container>
@@ -18,7 +19,7 @@ const Tarifas = () => {
                   {({ isVisible }) =>
                     <div className={isVisible ? "animate__animated animate__fadeIn" : ""}>
                         <h2>Planes Abril 2024</h2>
-                      <Tab.Container id="projects-tabs" defaultActiveKey="first">
+                      <Tab.Container id="projects-tabs" activeKey={activeTab} onSelect={setActiveTab}>
                         <Nav variant="pills" className="nav-pills mb-5 justify-content-center align-items-center" id="pills-tab">
                           <Nav.Item>
                             <Nav.Link eventKey="first">Diseño Web </Nav.Link>
@@ -32,17 +33,13 @@ const Tarifas = () => {
                         </Nav>
                         <Tab.Content id="slideInUp" className={isVisible ? "animate__animated animate__slideInUp" : ""}>
                           <Tab.Pane eventKey="first">
-                            <DiseñoWeb/>
-                            
+                            {activeTab === 'first' && <DiseñoWeb/>}
                           </Tab.Pane>
                           <Tab.Pane eventKey="second">
-                            <p> Nos especializamos en capturar la esencia de tu negocio y traducirla en diseños visuales que conectan y resuenan. Nuestra experiencia y creatividad nos permiten crear soluciones de diseño que no solo son estéticamente atractivas, sino también estratégicamente efectivas.<br />
-                              Contratar a un diseñador gráfico es invertir en la imagen de tu marca. Un buen diseño gráfico puede diferenciar tu negocio, captar la atención de tu público objetivo y comunicar tu mensaje de manera efectiva.</p>
-                           
+                            {activeTab === 'second' && <DiseñoGrafico/>}
                           </Tab.Pane>
                           <Tab.Pane eventKey="third">
-                            <p>En nuestro portafolio, verás cómo el sector de diseño puede hacer que tu logo destaque. Nos especializamos en crear logos que no solo son visualmente atractivos, sino que también cuentan la historia de tu marca y resuenan con tu público objetivo. Nuestro enfoque estratégico asegura que tu logo no solo sea memorable, sino que también tenga un impacto duradero. ¡Permítenos ayudarte a diseñar un logo que realmente represente a tu marca y haga que tu negocio brille en el mercado!</p>
-                            
+                            {activeTab === 'third' && <p>En nuestro portafolio, verás cómo el sector de diseño puede hacer que tu logo destaque. Nos especializamos en crear logos que no solo son visualmente atractivos, sino que también cuentan la historia de tu marca y resuenan con tu público objetivo. Nuestro enfoque estratégico asegura que tu logo no solo sea memorable, sino que también tenga un impacto duradero. ¡Permítenos ayudarte a diseñar un logo que realmente represente a tu marca y haga que tu negocio brille en el mercado!</p>}
                           </Tab.Pane>
                         </Tab.Content>
                       </Tab.Container>
