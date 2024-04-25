@@ -1,11 +1,10 @@
 import React from 'react';
 import { Container, Row, Col, Tab, Nav } from "react-bootstrap";
-import { ProjectCard } from "./ProjectCard";
 import 'animate.css';
 import TrackVisibility from 'react-on-screen';
-import Subscription from './Planes';
 import DiseñoWeb from './DiseñoWeb';
-import DiseñoGrafico from './DiseñoGrafico'; // Asegúrate de importar el componente DiseñoGrafico
+import DiseñoGrafico from './DiseñoGrafico';
+import Marketing from './Marketing'; // Importa el componente Marketing
 
 const Tarifas = () => {
     const [activeTab, setActiveTab] = React.useState('first');
@@ -39,7 +38,7 @@ const Tarifas = () => {
                             {activeTab === 'second' && <DiseñoGrafico/>}
                           </Tab.Pane>
                           <Tab.Pane eventKey="third">
-                            {activeTab === 'third' && <p>En nuestro portafolio, verás cómo el sector de diseño puede hacer que tu logo destaque. Nos especializamos en crear logos que no solo son visualmente atractivos, sino que también cuentan la historia de tu marca y resuenan con tu público objetivo. Nuestro enfoque estratégico asegura que tu logo no solo sea memorable, sino que también tenga un impacto duradero. ¡Permítenos ayudarte a diseñar un logo que realmente represente a tu marca y haga que tu negocio brille en el mercado!</p>}
+                            {activeTab === 'third' && <Marketing/>} {/* Renderiza el componente Marketing */}
                           </Tab.Pane>
                         </Tab.Content>
                       </Tab.Container>

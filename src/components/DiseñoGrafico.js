@@ -4,24 +4,31 @@ import 'animate.css';
 import TrackVisibility from 'react-on-screen';
 import DetailLogoBasic from "./DetailLogoBasic";
 import DetailLogoPremium from "./DetailLogoPremium";
+import DetailDisenoGrafico from "./DetailDisenoGrafico";
+import Whatsapp from './Whatsapp';
 
 // Import your icons
-import icon1 from "../assets/img/diseno1.jpg";
-import icon2 from "../assets/img/diseno3.jpg";
-
+import icon1 from "../assets/img/logo-violeta.png";
+import icon2 from "../assets/img/logo-positivo-negativo.png";
+import icon3 from "../assets/img/diseno5.jpg";
 
 export const DiseñoGrafico = () => {
 
     const PlanWeb = [
         {
-            title: "Diseño de logo plan básico",
+            title: "Diseño de logo Plan Básico",
             description: "Un plan económico para obtener un logotipo simple pero efectivo.",
             icon: icon1,
         },
         {
-            title: "Diseño de logo plan premium",
+            title: "Diseño de Logo Plan Premium",
             description: "Un plan premium para obtener un logotipo personalizado y único.",
             icon: icon2,
+        },
+        {
+            title: "Diseño Gráfico",
+            description: "Diseñamos Flyers, tarjetas de presentación, dibujos, etc",
+            icon: icon3,
         },
     ];
 
@@ -29,7 +36,7 @@ export const DiseñoGrafico = () => {
 
     const handlePlanClick = (plan) => {
         if (activePlan === plan) {
-            setActivePlan(null); 
+            setActivePlan(null);
         } else {
             setActivePlan(plan);
         }
@@ -43,7 +50,7 @@ export const DiseñoGrafico = () => {
                         <TrackVisibility>
                             {({ isVisible }) =>
                                 <div className={isVisible ? "animate__animated animate__fadeIn" : ""}>
-                                    <h2>Planes de Diseño de Logotipos</h2>
+                                    <h2>Planes de Diseño Gráfico</h2>
 
                                     <Tab.Container id="projects-tabs" defaultActiveKey="first">
                                         <Tab.Pane eventKey="first">
@@ -69,9 +76,10 @@ export const DiseñoGrafico = () => {
             </Container>
             {/* Aquí se muestra el componente correspondiente según el plan activo */}
             {activePlan && (
-                activePlan.title === "Diseño de logo plan básico" ? <DetailLogoBasic plan={activePlan} /> :
-                activePlan.title === "Diseño de logo plan premium" ? <DetailLogoPremium plan={activePlan} /> :
-                null
+                activePlan.title === "Diseño de logo Plan Básico" ? <DetailLogoBasic plan={activePlan} /> :
+                    activePlan.title === "Diseño de Logo Plan Premium" ? <DetailLogoPremium plan={activePlan} /> :
+                        activePlan.title === "Diseño Gráfico" ? <DetailDisenoGrafico plan={activePlan} /> :
+                            null
             )}
         </section>
     )

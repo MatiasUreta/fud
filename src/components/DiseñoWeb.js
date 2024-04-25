@@ -6,6 +6,7 @@ import DetailTiendaOnline from "./DetailTiendaOnline";
 import DetailEmprendedores from "./DetailEmprendedores";
 import DetailEmpresas from "./DetailEmpresas";
 import DetailAutogestion from "./DetailAutogestion";
+import Whatsapp from './Whatsapp';
 
 // Import your icons
 import icon1 from "../assets/img/tienda.webp";

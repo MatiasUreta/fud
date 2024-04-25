@@ -4,6 +4,7 @@ import headerImg from "../assets/img/header-img.svg";
 import { ArrowRightCircle } from 'react-bootstrap-icons';
 import 'animate.css';
 import TrackVisibility from 'react-on-screen';
+import Whatsapp from "./Whatsapp";
 
 export const Banner = () => {
   const [loopNum, setLoopNum] = useState(0);
@@ -58,7 +59,7 @@ export const Banner = () => {
                 <span className="tagline">FUD Soluciones Web</span>
                 <h1>{`Hola, somos FUD`} <span className="txt-rotate" dataPeriod="1000" data-rotate='[ "Desarrollo Web", "Diseño Gráfico", "Marketing Digital" ]'><span className="wrap">{text}</span></span></h1>
                   <p>Bienvenidos a nuestra agencia de Soluciones Web, un equipo joven y dinámico especializado en Desarrollo Web, Marketing Digital y Diseño Gráfico. Nos apasiona la innovación y la creatividad, y nos dedicamos a ayudar a las empresas y emprendedores a alcanzar su máximo potencial en el mundo digital. <br/><br/> Ofrecemos una variedad de servicios para satisfacer todas tus necesidades digitales. Ya sea que necesites una Tienda Online para ofrecer tus productos, diseñar tu Logo o Posicionarte en los buscadores.</p>
-                  <button onClick={() => console.log('connect')}>Contactar <ArrowRightCircle size={25} /></button>
+                  <Whatsapp/>
               </div>}
             </TrackVisibility>
           </Col>

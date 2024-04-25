@@ -12,8 +12,9 @@ import projImg9 from "../assets/img/diseno3.jpg";
 import projImg10 from "../assets/img/diseno4.jpg";
 import projImg11 from "../assets/img/diseno5.jpg";
 import projImg12 from "../assets/img/diseno6.jpg";
-import projImg13 from "../assets/img/valhallashop.png";
-import projImg14 from "../assets/img/valhallashop.png";
+import projImg13 from "../assets/img/logo-negro.png";
+import projImg14 from "../assets/img/logo-positivo-negativo.png";
+import projImg15 from "../assets/img/logo-blanco-y-negro.png";
 import colorSharp2 from "../assets/img/color-sharp2.png";
 import 'animate.css';
 import TrackVisibility from 'react-on-screen';
@@ -65,37 +66,43 @@ export const Projects = () => {
       imgUrl: projImg8
     },
     {
-      title: "Proyecto 1",
+      title: "Proyecto 3",
       description: "Diseño Gráfico",
       imgUrl: projImg9,
     },
     {
-      title: "Proyecto 2",
+      title: "Proyecto 4",
       description: "Diseño Gráfico",
       imgUrl: projImg10,
     },
     {
-      title: "Proyecto 1",
+      title: "Proyecto 5",
       description: "Diseño Gráfico",
       imgUrl: projImg11,
     },
     {
-      title: "Proyecto 2",
+      title: "Proyecto 6",
       description: "Diseño Gráfico",
       imgUrl: projImg12,
     },
   ];
 
   const logoDesignProjects = [
+  
     {
-      title: "Logo 1",
+      title: "Logo Contrastes",
+      description: "Diseño de Logos",
+      imgUrl: projImg14,
+    },
+    {
+      title: "Logotipo e Isotipos",
       description: "Diseño de Logos",
       imgUrl: projImg13,
     },
     {
-      title: "Logo 2",
+      title: "Logo Positivo y Negativo",
       description: "Diseño de Logos",
-      imgUrl: projImg14,
+      imgUrl: projImg15,
     },
 
   ];

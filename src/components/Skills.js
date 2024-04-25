@@ -1,16 +1,11 @@
-import meter1 from "../assets/img/meter1.svg";
-import meter2 from "../assets/img/meter2.svg";
-import meter3 from "../assets/img/meter3.svg";
+import React from 'react';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
-import arrow1 from "../assets/img/arrow1.svg";
-import arrow2 from "../assets/img/arrow2.svg";
-import colorSharp from "../assets/img/color-sharp.png"
+import { FaLaptopCode, FaStore, FaFileAlt, FaPenNib, FaPaintBrush, FaUserFriends, FaBullhorn, FaChartLine } from 'react-icons/fa'; // Importa los íconos
 
 export const Skills = () => {
   const responsive = {
     superLargeDesktop: {
-      // the naming can be any, depends on you.
       breakpoint: { max: 4000, min: 3000 },
       items: 5
     },
@@ -28,6 +23,18 @@ export const Skills = () => {
     }
   };
 
+  // Define los servicios de tu agencia
+  const services = [
+    { title: 'Diseño de Web', icon: <FaLaptopCode style={{ fontSize: '5em', color: 'pink' }} /> },
+    { title: 'Tiendas Online', icon: <FaStore style={{ fontSize: '5em', color: 'pink' }} /> },
+    { title: 'Diseño de Landing Page', icon: <FaFileAlt style={{ fontSize: '5em', color: 'pink' }} /> },
+    { title: 'Diseño de Logos', icon: <FaPenNib style={{ fontSize: '5em', color: 'pink' }} /> },
+    { title: 'Diseño Gráfico', icon: <FaPaintBrush style={{ fontSize: '5em', color: 'pink' }} /> },
+    { title: 'Community Manager', icon: <FaUserFriends style={{ fontSize: '5em', color: 'pink' }} /> },
+    { title: 'Marketing y Posicionamiento', icon: <FaChartLine style={{ fontSize: '5em', color: 'pink' }} /> },
+    { title: 'Campañas Publicitarias', icon: <FaBullhorn style={{ fontSize: '5em', color: 'pink' }} /> },
+  ];
+
   return (
     <section className="skill" id="skills">
         <div className="container">
@@ -35,30 +42,21 @@ export const Skills = () => {
                 <div className="col-12">
                     <div className="skill-bx wow zoomIn">
                         <h2>Servicios</h2>
-                        <p>Nuestro equipo se compene por programdores Full Stack, Diseñadores Gráficos y Community Manager.<br></br> Lo que nos hace ser la MEJOR opción a la hora de impulsar tu marca.</p>
+                        <p>Nuestro equipo se compone por programadores Full Stack, Diseñadores Gráficos y Community Manager.<br></br> Lo que nos hace ser la MEJOR opción a la hora de impulsar tu marca.</p>
                         <Carousel responsive={responsive} infinite={true} className="owl-carousel owl-theme skill-slider">
-                            <div className="item">
-                                <img src={meter1} alt="Image" />
-                                <h5>Diseñamos y Creamos Tu Sitio Web</h5>
-                            </div>
-                            <div className="item">
-                                <img src={meter2} alt="Image" />
-                                <h5>Diseñamos Tu Logo</h5>
-                            </div>
-                            <div className="item">
-                                <img src={meter3} alt="Image" />
-                                <h5>Posicionamos Tu Marca</h5>
-                            </div>
-                            <div className="item">
-                                <img src={meter1} alt="Image" />
-                                <h5>Diseñamos Tus Ideas</h5>
-                            </div>
+                            {services.map((service, index) => (
+                                <div className="item" key={index}>
+                                    {service.icon}
+                                    <h5>{service.title}</h5>
+                                </div>
+                            ))}
                         </Carousel>
                     </div>
                 </div>
             </div>
         </div>
-        <img className="background-image-left" src={colorSharp} alt="Image" />
     </section>
   )
 }
+
+export default Skills;

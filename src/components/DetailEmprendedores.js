@@ -2,6 +2,7 @@ import React from 'react';
 import { Button } from 'react-bootstrap';
 import { BsCheckCircle, BsFileEarmark, BsArrowDownUp, BsImages, BsCreditCard, BsTruck, BsSearch, BsFillEnvelopeFill, BsLink45Deg, BsGraphUp, BsPhoneLandscape, BsCash, BsShieldLock, BsWhatsapp } from "react-icons/bs";
 import colorSharp from "../assets/img/color-sharp.png"
+import Whatsapp from './Whatsapp';
 
 const DetailEmprendedores = () => {
     return (
@@ -34,7 +35,7 @@ const DetailEmprendedores = () => {
                         <p style={{ textAlign: 'center', color: '#777', marginBottom: '20px' }}>Contratación de dominio GRATIS por un año</p>
                         <hr style={{ borderTop: '1px solid #777' }} />
                         <div style={{ display: 'flex', justifyContent: 'center' }}>
-                            <Button className="Agregar" style={{ backgroundColor: '#00aaff', borderColor: '#00aaff' }}>Agregar al carrito</Button>
+                            <Whatsapp />
                         </div>
                     </div>
                 </div>
