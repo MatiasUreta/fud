@@ -45,6 +45,9 @@ const DetailEmpresas = () => {
                         </div>
                     </div>
                 </div>
+                <div style={{ border: '1px solid pink', padding: '20px', borderRadius: '5px', marginTop: '20px', textAlign: 'center', alignSelf: 'flex-end' }}>
+                    <p>El HOST no está incluido en el servicio</p>
+                </div>
             </div>
             <img className="background-image-left" src={colorSharp} alt="Image" />
         </section>

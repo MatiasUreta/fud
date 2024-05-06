@@ -26,22 +26,27 @@ export const Contact = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setButtonText("Enviando...");
-    let response = await fetch("http://localhost:5000/contact", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json;charset=utf-8",
-      },
-      body: JSON.stringify(formDetails),
-    });
-    setButtonText("Send");
-    let result = await response.json();
-    setFormDetails(formInitialDetails);
-    if (result.code == 200) {
-      setStatus({ succes: true, message: 'Mensaje enviado con éxito'});
-    } else {
-      setStatus({ succes: false, message: 'Algo salió mal, inténtalo de nuevo más tarde.'});
+    try {
+      let response = await fetch("http://localhost:5000/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json;charset=utf-8",
+        },
+        body: JSON.stringify(formDetails),
+      });
+      let result = await response.json();
+      setFormDetails(formInitialDetails);
+      if (result.code == 200) {
+        setStatus({ success: true, message: 'Mensaje enviado con éxito'});
+      } else {
+        setStatus({ success: false, message: 'Algo salió mal, inténtalo de nuevo más tarde.'});
+      }
+    } catch (error) {
+      setStatus({ success: false, message: 'Algo salió mal, inténtalo de nuevo más tarde.'});
     }
+    setButtonText("Enviar");
   };
+  
 
   return (
     <section className="contact" id="connect">
